@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { useLanguage } from '../context/LanguageContext'
+import { en as t } from '../translations/en'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -7,8 +7,6 @@ const fadeUp = {
 }
 
 export default function Experience() {
-  const { t } = useLanguage()
-
   return (
     <section id="experience" className="py-28" style={{ background: '#FAF6F0' }}>
       <div className="max-w-6xl mx-auto px-6">
@@ -45,7 +43,14 @@ export default function Experience() {
                   <div className="bg-white/70 border border-[#E4D9C6] rounded-2xl p-7 hover:border-[#d8cbb0] transition-colors duration-300">
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
                       <div>
-                        <h3 className="text-[#241F1B] font-bold text-lg">{exp.role}</h3>
+                        <div className="flex flex-wrap items-center gap-2">
+                          <h3 className="text-[#241F1B] font-bold text-lg">{exp.role}</h3>
+                          {exp.badge && (
+                            <span className="text-xs font-semibold text-[#0F6B65] bg-[#0F6B65]/10 border border-[#0F6B65]/30 px-2.5 py-1 rounded-full whitespace-nowrap">
+                              {exp.badge}
+                            </span>
+                          )}
+                        </div>
                         <p className="text-[#0F6B65] font-medium text-sm">{exp.company}</p>
                         <p className="text-[#8a8071] text-xs mt-0.5">{exp.location}</p>
                       </div>

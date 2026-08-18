@@ -10,7 +10,7 @@ export const en = {
   },
   hero: {
     greeting: "Hi, I'm",
-    name: 'Shayana Struzik',
+    name: 'Shayana Kali Eno Struzik',
     title: 'Aspiring HR Manager | Digital Marketing & Cross-Cultural Communication',
     subtitle:
       'Bachelor of Business student at RMIT University Vietnam, passionate about people, culture and building meaningful content for the brands I work with.',
@@ -65,6 +65,7 @@ export const en = {
     items: [
       {
         role: 'Social Management Intern',
+        badge: '',
         company: 'CHEK Genomics',
         location: 'Ho Chi Minh City, Vietnam',
         period: 'Jun 2026 – Sep 2026',
@@ -79,6 +80,7 @@ export const en = {
       },
       {
         role: 'Media Section Member',
+        badge: '',
         company: 'RMIT IC Club',
         location: 'Ho Chi Minh City, Vietnam',
         period: '2025',
@@ -92,6 +94,7 @@ export const en = {
       },
       {
         role: 'Team Member, Internationalisation Strategy',
+        badge: 'Finalist',
         company: "RMIT Global Business Course — Client Project",
         location: 'Ho Chi Minh City, Vietnam',
         period: 'Semester B, 2024',
@@ -119,11 +122,11 @@ export const en = {
           'Relevant courses: International Human Resources Management, Cross-Cultural Management, Digital Business Development, Integrated Perspectives on Business Problems',
       },
       {
-        degree: 'French Baccalauréat — LLCE & Mathematics specialties, Option Art',
+        degree: 'French Baccalauréat — LLCE (English) & Mathematics specialties',
         school: 'Lycée Français International Marguerite Duras',
         location: 'Ho Chi Minh City, Vietnam',
         period: '2022 – 2023',
-        detail: 'French national curriculum with a specialisation in Literature, Languages & Civilisations, and Mathematics',
+        detail: "French national curriculum with a specialisation in English Literature, Languages & Civilisations, and Mathematics — also an active member of the school's Art Club",
       },
     ],
   },
@@ -163,7 +166,7 @@ export const en = {
       issuer: 'RMIT University Vietnam, in partnership with BOO JSC',
       date: 'Semester B, 2024',
       description:
-        "Awarded to our team for the internationalisation plan we built for BOO, presented to the company's CEO, Mr Do Viet Anh, and Course Coordinator, Dr Bich Le.",
+        "Awarded to our team for the internationalisation plan we built for BOO, with the certificate signed by BOO's CEO, Mr Do Viet Anh, and the course's Coordinator, Dr Bich Le.",
       image_alt: "Certificate of Recognition — Finalist in RMIT's Global Business Course Client Project for BOO, Semester B 2024",
     },
   },
@@ -172,6 +175,7 @@ export const en = {
     subtitle: 'Open to internships, graduate opportunities and collaborations in HR and digital marketing.',
     email_label: 'Email',
     linkedin_label: 'LinkedIn',
+    phone_label: 'Phone',
     location_label: 'Location',
     copy_success: 'Copied!',
   },

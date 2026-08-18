@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { useLanguage } from '../context/LanguageContext'
+import { en as t } from '../translations/en'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -7,8 +7,6 @@ const fadeUp = {
 }
 
 export default function Education() {
-  const { t } = useLanguage()
-
   return (
     <section id="education" className="py-28" style={{ background: '#F1E8DA' }}>
       <div className="max-w-6xl mx-auto px-6">

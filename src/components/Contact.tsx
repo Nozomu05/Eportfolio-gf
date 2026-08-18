@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { useLanguage } from '../context/LanguageContext'
+import { en as t } from '../translations/en'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -16,7 +16,6 @@ interface ContactItem {
 }
 
 export default function Contact() {
-  const { t } = useLanguage()
   const [copied, setCopied] = useState<string | null>(null)
 
   const copy = (text: string, key: string) => {
@@ -59,6 +58,17 @@ export default function Contact() {
     },
   ]
 
+  const phoneNumbers = [
+    { region: 'VN', value: '+84 90 278 22 97', href: 'tel:+84902782297' },
+    { region: 'FR', value: '+33 6 65 66 51 71', href: 'tel:+33665665171' },
+  ]
+
+  const phoneIcon = (
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106a2.25 2.25 0 00-2.331.94l-.398.598a.75.75 0 01-.822.318 12.784 12.784 0 01-6.406-6.406.75.75 0 01.318-.822l.599-.398a2.25 2.25 0 00.94-2.33L6.964 3.354a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.75v2z" />
+    </svg>
+  )
+
   return (
     <section id="contact" className="py-28" style={{ background: '#FAF6F0' }}>
       <div className="max-w-6xl mx-auto px-6">
@@ -74,7 +84,7 @@ export default function Contact() {
             <p className="text-[#6E6355] text-lg">{t.contact.subtitle}</p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {contacts.map((c) => {
               const content = (
                 <>
@@ -131,6 +141,26 @@ export default function Contact() {
                 </motion.div>
               )
             })}
+
+            <motion.div variants={fadeUp}>
+              <div className="flex flex-col gap-3 bg-white/70 border border-[#E4D9C6] rounded-2xl p-6 h-full">
+                <div className="p-2.5 bg-[#F1E8DA] rounded-xl text-[#0F6B65] w-fit">{phoneIcon}</div>
+                <div>
+                  <p className="text-[#8a8071] text-xs mb-1">{t.contact.phone_label}</p>
+                  <div className="flex flex-col gap-0.5">
+                    {phoneNumbers.map((p) => (
+                      <a
+                        key={p.href}
+                        href={p.href}
+                        className="text-[#241F1B] text-sm font-medium leading-snug hover:text-[#0F6B65] transition-colors duration-200"
+                      >
+                        {p.value} <span className="text-[#a89e8b] text-xs">({p.region})</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>

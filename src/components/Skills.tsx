@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { useLanguage } from '../context/LanguageContext'
+import { en as t } from '../translations/en'
 import type { Translations } from '../translations/en'
 
 type CategoryKey = keyof Translations['skills']['categories']
@@ -17,7 +17,6 @@ const fadeUp = {
 }
 
 export default function Skills() {
-  const { t } = useLanguage()
   const categories = Object.entries(t.skills.categories) as [CategoryKey, { label: string; items: string[] }][]
 
   return (

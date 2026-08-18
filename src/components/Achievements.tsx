@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { useLanguage } from '../context/LanguageContext'
+import { en as t } from '../translations/en'
 import certificate from '../assets/boo-certificate.png'
 
 const fadeUp = {
@@ -8,7 +8,6 @@ const fadeUp = {
 }
 
 export default function Achievements() {
-  const { t } = useLanguage()
   const { item } = t.achievements
 
   return (

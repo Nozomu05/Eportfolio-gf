@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import type { Variants } from 'framer-motion'
-import { useLanguage } from '../context/LanguageContext'
+import { en as t } from '../translations/en'
 
 const container: Variants = {
   hidden: {},
@@ -12,7 +12,6 @@ const item: Variants = {
 }
 
 export default function Hero() {
-  const { t } = useLanguage()
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20" style={{ background: '#FAF6F0' }}>
@@ -32,8 +31,8 @@ export default function Hero() {
             {t.hero.greeting}
           </motion.p>
 
-          <motion.h1 variants={item} className="font-serif text-5xl sm:text-6xl md:text-7xl font-semibold text-[#241F1B] mb-4 leading-[1.05] tracking-tight">
-            Shayana
+          <motion.h1 variants={item} className="font-serif text-4xl sm:text-5xl md:text-6xl font-semibold text-[#241F1B] mb-4 leading-[1.05] tracking-tight">
+            Shayana Kali Eno
             <br />
             <span
               style={{
