@@ -153,7 +153,7 @@ export const en = {
         title: 'RMIT IC Club — Mid-Semester Bonding Session',
         badge: 'Event leadership',
         description:
-          'I organised the Mid-Semester Bonding Session for the whole club, designing the main icebreaker game along with several supporting activities to bring members together.',
+          "I organised the club's Mid-Semester Bonding Session, designing the main icebreaker game along with several supporting activities to bring members together.",
         skills: ['Event planning', 'Game design', 'Team leadership'],
       },
     ],
