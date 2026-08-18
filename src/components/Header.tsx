@@ -1,0 +1,133 @@
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useLanguage } from '../context/LanguageContext'
+
+const NAV_IDS = ['about', 'skills', 'experience', 'education', 'projects', 'achievements', 'contact'] as const
+type NavId = typeof NAV_IDS[number]
+
+export default function Header() {
+  const { language, setLanguage, t } = useLanguage()
+  const [scrolled, setScrolled] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 30)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    setMobileOpen(false)
+  }
+
+  const navLabels: Record<NavId, string> = {
+    about: t.nav.about,
+    skills: t.nav.skills,
+    experience: t.nav.experience,
+    education: t.nav.education,
+    projects: t.nav.projects,
+    achievements: t.nav.achievements,
+    contact: t.nav.contact,
+  }
+
+  return (
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? 'bg-[#FAF6F0]/90 backdrop-blur-md border-b border-[#E4D9C6]' : ''
+      }`}
+    >
+      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="font-serif text-lg sm:text-xl font-semibold text-[#241F1B] hover:text-[#0F6B65] transition-colors"
+        >
+          Shayana <span className="text-[#0F6B65]">Struzik</span>
+        </button>
+
+        <nav className="hidden lg:flex items-center gap-7">
+          {NAV_IDS.map((id) => (
+            <button
+              key={id}
+              onClick={() => scrollTo(id)}
+              className="text-sm text-[#6E6355] hover:text-[#241F1B] transition-colors font-medium"
+            >
+              {navLabels[id]}
+            </button>
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-0.5 bg-white border border-[#E4D9C6] rounded-full p-1">
+            <button
+              onClick={() => setLanguage('en')}
+              className={`px-3 py-1 rounded-full text-xs font-semibold transition-all duration-200 ${
+                language === 'en'
+                  ? 'bg-[#0F6B65] text-white'
+                  : 'text-[#8a8071] hover:text-[#241F1B]'
+              }`}
+            >
+              EN
+            </button>
+            <button
+              onClick={() => setLanguage('fr')}
+              className={`px-3 py-1 rounded-full text-xs font-semibold transition-all duration-200 ${
+                language === 'fr'
+                  ? 'bg-[#0F6B65] text-white'
+                  : 'text-[#8a8071] hover:text-[#241F1B]'
+              }`}
+            >
+              FR
+            </button>
+          </div>
+
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="lg:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5"
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`block w-5 h-0.5 bg-[#241F1B] transition-all duration-300 origin-center ${
+                mobileOpen ? 'rotate-45 translate-y-2' : ''
+              }`}
+            />
+            <span
+              className={`block w-5 h-0.5 bg-[#241F1B] transition-all duration-300 ${
+                mobileOpen ? 'opacity-0 scale-x-0' : ''
+              }`}
+            />
+            <span
+              className={`block w-5 h-0.5 bg-[#241F1B] transition-all duration-300 origin-center ${
+                mobileOpen ? '-rotate-45 -translate-y-2' : ''
+              }`}
+            />
+          </button>
+        </div>
+      </div>
+
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+            className="lg:hidden overflow-hidden bg-[#FAF6F0]/95 backdrop-blur-md border-b border-[#E4D9C6]"
+          >
+            <nav className="flex flex-col px-6 py-5 gap-5">
+              {NAV_IDS.map((id) => (
+                <button
+                  key={id}
+                  onClick={() => scrollTo(id)}
+                  className="text-left text-[#6E6355] hover:text-[#241F1B] transition-colors font-medium"
+                >
+                  {navLabels[id]}
+                </button>
+              ))}
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
+  )
+}
