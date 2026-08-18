@@ -13,7 +13,7 @@ export const en = {
     name: 'Shayana Kali Eno Struzik',
     title: 'Aspiring HR Manager | Digital Marketing & Cross-Cultural Communication',
     subtitle:
-      'Bachelor of Business student at RMIT University Vietnam, passionate about people, culture and building meaningful content for the brands I work with.',
+      'Bachelor of Business student at RMIT University Vietnam, passionate about helping people, culture and building meaningful content for the brands I work with.',
     cta_projects: 'View My Work',
     cta_contact: 'Get in Touch',
     scroll: 'scroll',
@@ -153,7 +153,7 @@ export const en = {
         title: 'RMIT IC Club — Mid-Semester Bonding Session',
         badge: 'Event leadership',
         description:
-          "I organised the Media Section's Mid-Semester Bonding Session for the whole club, designing the main icebreaker game along with several supporting activities to bring members together.",
+          'I organised the Mid-Semester Bonding Session for the whole club, designing the main icebreaker game along with several supporting activities to bring members together.',
         skills: ['Event planning', 'Game design', 'Team leadership'],
       },
     ],

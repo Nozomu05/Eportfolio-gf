@@ -39,9 +39,9 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="font-serif text-lg sm:text-xl font-semibold text-[#241F1B] hover:text-[#0F6B65] transition-colors"
+          className="font-serif text-base sm:text-lg md:text-xl font-semibold text-[#241F1B] hover:text-[#0F6B65] transition-colors whitespace-nowrap"
         >
-          Shayana <span className="text-[#0F6B65]">Struzik</span>
+          Shayana Kali Eno <span className="text-[#0F6B65]">Struzik</span>
         </button>
 
         <nav className="hidden lg:flex items-center gap-7">
