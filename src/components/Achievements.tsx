@@ -11,7 +11,7 @@ export default function Achievements() {
   const { item } = t.achievements
 
   return (
-    <section id="achievements" className="py-28" style={{ background: '#F1E8DA' }}>
+    <section id="achievements" className="py-28 scroll-mt-24" style={{ background: '#F1E8DA' }}>
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           initial="hidden"

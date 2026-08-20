@@ -8,7 +8,7 @@ const fadeUp = {
 
 export default function Education() {
   return (
-    <section id="education" className="py-28" style={{ background: '#F1E8DA' }}>
+    <section id="education" className="py-28 scroll-mt-24" style={{ background: '#F1E8DA' }}>
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           initial="hidden"

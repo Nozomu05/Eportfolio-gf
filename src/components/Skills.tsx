@@ -20,7 +20,7 @@ export default function Skills() {
   const categories = Object.entries(t.skills.categories) as [CategoryKey, { label: string; items: string[] }][]
 
   return (
-    <section id="skills" className="py-28" style={{ background: '#F1E8DA' }}>
+    <section id="skills" className="py-28 scroll-mt-24" style={{ background: '#F1E8DA' }}>
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           initial="hidden"

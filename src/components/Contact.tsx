@@ -70,7 +70,7 @@ export default function Contact() {
   )
 
   return (
-    <section id="contact" className="py-28" style={{ background: '#FAF6F0' }}>
+    <section id="contact" className="py-28 scroll-mt-24" style={{ background: '#FAF6F0' }}>
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           initial="hidden"
