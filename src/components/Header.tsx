@@ -16,8 +16,14 @@ export default function Header() {
   }, [])
 
   const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-    setMobileOpen(false)
+    if (mobileOpen) {
+      setMobileOpen(false)
+      window.setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+      }, 250)
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 
   const navLabels: Record<NavId, string> = {
