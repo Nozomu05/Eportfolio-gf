@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { en as t } from '../translations/en'
+import { useLanguage } from '../context/useLanguage'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -7,6 +7,8 @@ const fadeUp = {
 }
 
 export default function About() {
+  const { t } = useLanguage()
+
   return (
     <section id="about" className="py-28 scroll-mt-24" style={{ background: '#FAF6F0' }}>
       <div className="max-w-6xl mx-auto px-6">
@@ -18,7 +20,7 @@ export default function About() {
         >
           <motion.div variants={fadeUp} className="mb-16">
             <p className="text-[#0F6B65] font-semibold text-xs tracking-widest uppercase mb-3">
-              About
+              {t.about.kicker}
             </p>
             <h2 className="font-serif text-4xl md:text-5xl font-semibold text-[#241F1B] mb-3">{t.about.title}</h2>
             <p className="text-[#6E6355] text-lg">{t.about.subtitle}</p>

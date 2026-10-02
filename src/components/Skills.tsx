@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { en as t } from '../translations/en'
+import { useLanguage } from '../context/useLanguage'
 import type { Translations } from '../translations/en'
 
 type CategoryKey = keyof Translations['skills']['categories']
@@ -17,6 +17,7 @@ const fadeUp = {
 }
 
 export default function Skills() {
+  const { t } = useLanguage()
   const categories = Object.entries(t.skills.categories) as [CategoryKey, { label: string; items: string[] }][]
 
   return (
@@ -29,7 +30,7 @@ export default function Skills() {
           variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
         >
           <motion.div variants={fadeUp} className="mb-16">
-            <p className="text-[#0F6B65] font-semibold text-xs tracking-widest uppercase mb-3">Skills</p>
+            <p className="text-[#0F6B65] font-semibold text-xs tracking-widest uppercase mb-3">{t.skills.kicker}</p>
             <h2 className="font-serif text-4xl md:text-5xl font-semibold text-[#241F1B] mb-3">{t.skills.title}</h2>
             <p className="text-[#6E6355] text-lg">{t.skills.subtitle}</p>
           </motion.div>

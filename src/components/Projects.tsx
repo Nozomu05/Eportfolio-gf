@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { en as t } from '../translations/en'
+import { useLanguage } from '../context/useLanguage'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -7,6 +7,8 @@ const fadeUp = {
 }
 
 export default function Projects() {
+  const { t } = useLanguage()
+
   return (
     <section id="projects" className="py-28 scroll-mt-24" style={{ background: '#FAF6F0' }}>
       <div className="max-w-6xl mx-auto px-6">
@@ -17,7 +19,7 @@ export default function Projects() {
           variants={{ visible: { transition: { staggerChildren: 0.12 } } }}
         >
           <motion.div variants={fadeUp} className="mb-16">
-            <p className="text-[#0F6B65] font-semibold text-xs tracking-widest uppercase mb-3">Projects</p>
+            <p className="text-[#0F6B65] font-semibold text-xs tracking-widest uppercase mb-3">{t.projects.kicker}</p>
             <h2 className="font-serif text-4xl md:text-5xl font-semibold text-[#241F1B] mb-3">{t.projects.title}</h2>
             <p className="text-[#6E6355] text-lg">{t.projects.subtitle}</p>
           </motion.div>

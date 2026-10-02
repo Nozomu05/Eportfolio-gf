@@ -19,6 +19,7 @@ export const en = {
     scroll: 'scroll',
   },
   about: {
+    kicker: 'About',
     title: 'About Me',
     subtitle: 'Building people-first strategies at the intersection of HR, culture and digital marketing.',
     p1: 'Currently completing a Bachelor of Business (Major in Global Business, Minor in Management and Change) at RMIT University Vietnam, I am building the foundations for a career as an HR Manager in Europe. My coursework in International Human Resources Management, Cross-Cultural Management and Digital Business Development has shaped how I think about people, culture and organisations.',
@@ -37,6 +38,7 @@ export const en = {
     ],
   },
   skills: {
+    kicker: 'Skills',
     title: 'Skills',
     subtitle: 'The capabilities I bring to a team.',
     categories: {
@@ -59,6 +61,7 @@ export const en = {
     },
   },
   experience: {
+    kicker: 'Experience',
     title: 'Experience',
     subtitle: 'Where I have put people-first thinking into practice.',
     present: 'Present',
@@ -110,6 +113,7 @@ export const en = {
     ],
   },
   education: {
+    kicker: 'Education',
     title: 'Education',
     subtitle: 'Academic background.',
     items: [
@@ -131,6 +135,7 @@ export const en = {
     ],
   },
   projects: {
+    kicker: 'Projects',
     title: 'Selected Projects & Artefacts',
     subtitle: 'A closer look at the work behind my experience.',
     skills_label: 'Skills demonstrated',
@@ -159,6 +164,7 @@ export const en = {
     ],
   },
   achievements: {
+    kicker: 'Achievements',
     title: 'Achievements',
     subtitle: 'Recognition along the way.',
     item: {
@@ -171,6 +177,7 @@ export const en = {
     },
   },
   contact: {
+    kicker: 'Contact',
     title: "Let's Connect",
     subtitle: 'Open to internships, graduate opportunities and collaborations in HR and digital marketing.',
     email_label: 'Email',

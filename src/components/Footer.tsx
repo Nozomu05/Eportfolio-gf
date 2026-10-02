@@ -1,6 +1,7 @@
-import { en as t } from '../translations/en'
+import { useLanguage } from '../context/useLanguage'
 
 export default function Footer() {
+  const { t } = useLanguage()
   const year = new Date().getFullYear()
 
   return (

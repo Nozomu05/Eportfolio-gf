@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { en as t } from '../translations/en'
+import { useLanguage } from '../context/useLanguage'
 
 const NAV_IDS = ['about', 'skills', 'experience', 'education', 'projects', 'achievements', 'contact'] as const
 type NavId = typeof NAV_IDS[number]
 
 export default function Header() {
+  const { t, language, setLanguage } = useLanguage()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
 
@@ -63,6 +64,27 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
+          <div className="flex items-center rounded-full border border-[#d8cbb0] p-0.5 text-xs font-semibold">
+            <button
+              onClick={() => setLanguage('en')}
+              className={`px-2.5 py-1 rounded-full transition-colors duration-200 ${
+                language === 'en' ? 'bg-[#0F6B65] text-white' : 'text-[#6E6355] hover:text-[#241F1B]'
+              }`}
+              aria-pressed={language === 'en'}
+            >
+              EN
+            </button>
+            <button
+              onClick={() => setLanguage('fr')}
+              className={`px-2.5 py-1 rounded-full transition-colors duration-200 ${
+                language === 'fr' ? 'bg-[#0F6B65] text-white' : 'text-[#6E6355] hover:text-[#241F1B]'
+              }`}
+              aria-pressed={language === 'fr'}
+            >
+              FR
+            </button>
+          </div>
+
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="lg:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5"

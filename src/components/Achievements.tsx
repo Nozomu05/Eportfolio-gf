@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { en as t } from '../translations/en'
+import { useLanguage } from '../context/useLanguage'
 import certificate from '../assets/boo-certificate.png'
 
 const fadeUp = {
@@ -8,6 +8,7 @@ const fadeUp = {
 }
 
 export default function Achievements() {
+  const { t } = useLanguage()
   const { item } = t.achievements
 
   return (
@@ -20,7 +21,7 @@ export default function Achievements() {
           variants={{ visible: { transition: { staggerChildren: 0.12 } } }}
         >
           <motion.div variants={fadeUp} className="mb-16">
-            <p className="text-[#0F6B65] font-semibold text-xs tracking-widest uppercase mb-3">Achievements</p>
+            <p className="text-[#0F6B65] font-semibold text-xs tracking-widest uppercase mb-3">{t.achievements.kicker}</p>
             <h2 className="font-serif text-4xl md:text-5xl font-semibold text-[#241F1B] mb-3">{t.achievements.title}</h2>
             <p className="text-[#6E6355] text-lg">{t.achievements.subtitle}</p>
           </motion.div>

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import type { Variants } from 'framer-motion'
-import { en as t } from '../translations/en'
+import { useLanguage } from '../context/useLanguage'
 
 const container: Variants = {
   hidden: {},
@@ -12,6 +12,7 @@ const item: Variants = {
 }
 
 export default function Hero() {
+  const { t } = useLanguage()
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20" style={{ background: '#FAF6F0' }}>

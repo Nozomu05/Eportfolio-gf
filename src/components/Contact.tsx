@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { en as t } from '../translations/en'
+import { useLanguage } from '../context/useLanguage'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -16,6 +16,7 @@ interface ContactItem {
 }
 
 export default function Contact() {
+  const { t } = useLanguage()
   const [copied, setCopied] = useState<string | null>(null)
 
   const copy = (text: string, key: string) => {
@@ -79,7 +80,7 @@ export default function Contact() {
           variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
         >
           <motion.div variants={fadeUp} className="mb-16">
-            <p className="text-[#0F6B65] font-semibold text-xs tracking-widest uppercase mb-3">Contact</p>
+            <p className="text-[#0F6B65] font-semibold text-xs tracking-widest uppercase mb-3">{t.contact.kicker}</p>
             <h2 className="font-serif text-4xl md:text-5xl font-semibold text-[#241F1B] mb-3">{t.contact.title}</h2>
             <p className="text-[#6E6355] text-lg">{t.contact.subtitle}</p>
           </motion.div>
