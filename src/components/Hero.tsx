@@ -71,7 +71,7 @@ export default function Hero() {
 
           <motion.div variants={item} className="flex items-center gap-5">
             <a
-              href="https://www.linkedin.com/in/shayana-kali-eno-struzik-79137429a/"
+              href="https://www.linkedin.com/in/shayana-struzik/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#8a8071] hover:text-[#0F6B65] transition-colors duration-200"
